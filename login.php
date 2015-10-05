@@ -14,10 +14,13 @@ require('model/functions.fn.php');
 if(isset($_POST['email']) && isset($_POST['password'])){
 	if(!empty($_POST['email']) && !empty($_POST['password'])){
 
-		// TODO
+	
+	$email = $_POST['email'];
+	$password = $_POST['password'];
+
 
 		// Force user connection to access dashboard
-		userConnection($db, 'git@initiation.com', 'password');
+		if(userConnection($db, $email, $password) == true){
 		
 		header('Location: dashboard.php');
 
@@ -25,7 +28,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 		$error = 'Champs requis !';
 	}
 }
-
+}
 /******************************** 
 			VIEW 
 ********************************/
