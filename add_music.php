@@ -8,7 +8,7 @@ if( isset($_FILES['music']) && !empty($_FILES['music']) &&
 	
 	$file = $_FILES['music'];
 
-	if(is_file($file['temp'])){
+	// if(is_file($file['temp'])){
 		$ext = strtolower(substr(strrchr($file['name'], '.')  ,1));
 		// Vérification des extentions
 		if (preg_match('/\.(mp3|ogg)$/i', $file['name'])) {
@@ -26,9 +26,7 @@ if( isset($_FILES['music']) && !empty($_FILES['music']) &&
 
 						}else{ $error = 'Erreur, le fichier n\'a pas une extension autorisée !';
 					}
-		}else{
-			$error = 'Erreur';
-		}
+		
 //	$error = 'Erreur, veuillez remplir les champs';
 }
 
